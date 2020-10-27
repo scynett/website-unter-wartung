@@ -233,7 +233,7 @@ jQuery(window).on("load", function () {
     if (isValidEmail(email) && message.length > 1 && name.length > 1) {
       $.ajax({
         type: "POST",
-        url: "https://cdn.jsdelivr.net/gh/Msuccess/rebranding_page/php/sendmail.php",
+        url: "http://rebranding.scynetthotspot.com/php/sendmail.php",
         data: dataString,
         success: function () {
           $("#contact-form .success").fadeIn(1000);
