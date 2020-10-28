@@ -5,8 +5,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Scynett - Ghana</title>
-	<meta name="description" content="">
+	<title>Scynett</title>
+	<meta name="description" content="Software Solutions, Web Design, Digital Marketing & Workplace - Scynett">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Favicon -->
@@ -15,13 +15,15 @@
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
 	<!-- Ico Font CSS -->
-	<link rel="stylesheet" href="css/icofont.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
+	<!-- Ico Font CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Msuccess/rebranding_page/css/icofont.css">
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Msuccess/rebranding_page/css/bootstrap.min.css">
 	<!-- Style CSS -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Msuccess/rebranding_page/css/style.css">
 	<!-- Responsive CSS -->
-	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Msuccess/rebranding_page/css/responsive.css">
 
 
 </head>
@@ -71,7 +73,9 @@
 
 					<div class="col-xs-6 exs-full-width">
 						<div class="logo">
-							<a href="index.html"><img src="img/logo-white.png" alt="Logo" width="200"></a>
+							<a href="index.html"><img
+									src="https://cdn.jsdelivr.net/gh/Msuccess/rebranding_page/img/logo-white.png"
+									alt="Logo" width="200"></a>
 						</div>
 					</div><!-- /end col- -->
 				</div><!-- /end row -->
@@ -132,14 +136,6 @@
 											</ul>
 										</div><!-- /end countdown-timer -->
 
-										<div class="subscribe-form">
-											<h4>Find out more</h4>
-											<form action="index.html" class="form-inline">
-												<input type="email" name="email" class="form-control btn-rounded"
-													placeholder="Email Address">
-												<button type="submit" class="btn btn-cyan btn-round">Submit</button>
-											</form>
-										</div><!-- /end subscribe-form -->
 									</div><!-- /end tab-body -->
 								</div>
 								<!-- /Single tab content ends -->
@@ -190,8 +186,8 @@
 									</div><!-- /end tab-heading -->
 
 									<div class="tab-body" style="font-weight: 500;">
-										<p>Scynett Ghana offers professional development of Web applications from the
-											analysis phase through to the development and maintenance Phase. We involve
+										<p>Scynett offers IT solutions to organizations from the analysis phase through
+											to the development and maintenance Phase.We involve
 											our customers at every stage of development to ensure the best satisfaction
 											of the end product.</p>
 										<p>We build cross-platform desktop applications. Our agile approach to software
@@ -207,10 +203,9 @@
 										<p>There are several technologies that enable already existing applications
 											communicate with other application within or outside your network. At
 											Scynett we help our customers by analyzing their existing environments and
-											coming up with cost-effective solutions achieving desired results. We have
-											expertise in building middleware solution based on tools such as BizTalk,
-											SQL Server Integration Services and Windows Communication Foundation. Talk
-											to us today and we guarantee to find the right solution to your problem.</p>
+											coming up with cost-effective solutions achieving desired results.
+											Talk to us today and we guarantee to find the right solution to your
+											problem.</p>
 										<!-- <a href="#" class="readmore-link" data-toggle="modal"
 											data-target="#aboutus">Read More <i
 												class="icofont icofont-long-arrow-right"></i></a> -->
@@ -231,12 +226,36 @@
 
 
 	<!-- jQuery -->
-	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/Msuccess/rebranding_page/js/jquery-3.2.1.min.js"></script>
 	<!-- Bootstrap JS -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/Msuccess/rebranding_page/js/bootstrap.min.js"></script>
 
 	<!-- scripts -->
-	<script src="js/scripts.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/Msuccess/rebranding_page/js/scriptx.js"></script>
+
+	<script>
+		var redirectToScynettDe = () => {
+			debugger
+			var siteDe = 'https://scynett.de';
+			var isDE = window.sessionStorage.getItem('isDE');
+			if (isDE && isDE === '1') {
+				window.location.href = siteDe;
+			} else if (!isDE) {
+				fetch('https://ipapi.co/json/')
+					.then(_ => _.json())
+					.then((data) => {
+						if (data && ['germany'].includes(data.country_name.toLowerCase())) {
+							window.sessionStorage.setItem('isDE', '1');
+							window.location.href = siteDe;
+						} else {
+							window.sessionStorage.setItem('isDE', '0');
+						}
+					});
+			}
+		}
+
+		redirectToScynettDe();
+	</script>
 </body>
 
 </html>
