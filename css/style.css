@@ -1,3 +1,7 @@
+.padding-big {
+  padding: 0px 0 !important;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -806,6 +810,7 @@ y :-moz-placeholder {
   100% {
     top: 50%;
     left: 100%;
+
     z-index: 2;
     opacity: 0.35;
     -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=35)';
