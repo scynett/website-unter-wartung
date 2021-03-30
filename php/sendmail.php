@@ -10,7 +10,7 @@
 
   $message = 'Name: ' . $name . "\n\n" . 'Email: ' . $email . "\n\n" . 'Message: ' . $message;
 
-  $success = @mail($email_to, "[ Scynett Ghana] ".$name, $message);
+  $success = @mail($email_to, "[Scynett Deutschland GmbH] ".$name, $message);
 
-  $noreply = @mail($email_from, "[Scynett Ghana] Thank you for mailing us.", "We will be back to you soon!");
+  $noreply = @mail($email_from, "[Scynett Deutschland GmbH] Vielen Dank, dass Sie uns eine E-Mail geschickt haben.", "Wir werden uns bald bei Ihnen melden!");
 ?>
