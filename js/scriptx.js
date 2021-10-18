@@ -236,13 +236,13 @@ jQuery(window).on('load', function () {
         url: 'https://scynett.com/sendmail.php',
         data: dataString,
         success: function () {
-          $('#contact-form .success').fadeIn(1000);
+          $('#contact-form .success').fadeIn(500);
           $('#contact-form .error').fadeOut(500);
-          $('#contact-form')[0].reset();
+          $('#contact-form')[0].reset(0);
         },
       });
     } else {
-      $('.error').fadeIn(1000);
+      $('.error').fadeIn(500);
       $('.success').fadeOut(500);
     }
 
